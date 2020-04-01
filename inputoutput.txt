@@ -1,0 +1,38 @@
+input.txt
+
+COPY	START	1000
+-	LDA	ALPHA
+-	STA	BETA
+ALPHA	RESW	1
+BETA	RESW	1
+-	END	-	optab.txt
+
+optab.txt
+LDA	00
+STA	23
+LDCH	15
+STCH	18
+
+
+Output:
+
+symtab.txt
+ALPHA	*
+BETA	*	symtab1.txt
+ALPHA	1006
+BETA	1009
+
+
+Output.txt
+00	0000
+23	0000
+1001	1006
+1004	1009
+
+
+result.txt:
+H^COPY^1000^0c
+T^001000^0c^000000^230000
+T^1001^02^1006
+T^1004^02^1009
+E^001000
